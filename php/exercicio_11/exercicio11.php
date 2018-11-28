@@ -2,44 +2,42 @@
     
     $mes = $_GET['mes'];
     
-    echo "oi".$mes;
-    
-    swich ($mes){
+    switch ($mes){
         case 1:
-            echo"Janeiro";
+            echo"O número informado corresponde ao mês de Janeiro";
             break;
         case 2:
-            echo"Fevereiro";
+            echo"O número informado corresponde ao mês de Fevereiro";
             break;
         case 3:
-            echo"Março";
+            echo"O número informado corresponde ao mês de Março";
             break;
         case 4:
-            echo"Abril";
+            echo"O número informado corresponde ao mês de Abril";
             break;
         case 5:
-            echo"Maio";
+            echo"O número informado corresponde ao mês de Maio";
             break;
         case 6:
-            echo"Junho";
+            echo"O número informado corresponde ao mês de Junho";
             break;
         case 7:
-            echo"Julho";
+            echo"O número informado corresponde ao mês de Julho";
             break;
         case 8:
-            echo"Agosto";
+            echo"O número informado corresponde ao mês de Agosto";
             break;
         case 9:
-            echo"Setembro";
+            echo"O número informado corresponde ao mês de Setembro";
             break;
         case 10:
-            echo"Outubro";
+            echo"O número informado corresponde ao mês de Outubro";
             break;
         case 11:
-            echo"Novembro";
+            echo"O número informado corresponde ao mês de Novembro";
             break;
         case 12:
-            echo"Dezembro";
+            echo"O número informado corresponde ao mês de Dezembro";
             break;
         default:
             echo"O número informado não corresponde a nenhum mês";
