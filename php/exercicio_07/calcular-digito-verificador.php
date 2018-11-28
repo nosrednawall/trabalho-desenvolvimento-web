@@ -6,29 +6,33 @@
     // 2. Somar o número da conta com o seu inverso: 235+352 = 767.
     // 3. Multiplicar cada dígito pela sua ordem posicional e somar estes resultados.
     // 4. 7x1 + 6x2 + 7x3 = 40. O último dígito desse resultado é o dígito verificador da conta (40 → 0).
-
     
-        // variável com os números
-        $str = "235";
-        // Regex de pesquisa
-        $search = array('#([0-9]{1})([0-9]{1})([0-9]{1})#');
-        // Regex de substituição.
-        $replace = array("$1.$2.$3");
-        // e usamos a preg_replace (consulte o manual do PHP) para substituir.
-        // eu usei duas array para fazer a substituição, mais poderia ter usado string's
-        $result = preg_replace($search, $replace, $str);
+    //RECEBER OS DADOS DO USUÁRIO
+    //__________________________________________
+    
+    // variável com os números
+    $contaCorrente = "235";
+    
+    $digitoVerificador = verificarDigitoVerificador($contaCorrente);
+    
+    echo($digitoVerificador);
+    
+    function verificarDigitoVerificador($contaCorrente){
         
-        echo($result);
+        $valorInvertido = $contaCorrente[2].$contaCorrente[1].$contaCorrente[0];
+        $soma =  $valorInvertido + $contaCorrente;
+        $soma = "$soma";
+
+        $primeiroDigito = $soma[0] * 1;
+        $segundoDigito = $soma[1] * 2;
+        $terceiroDigito = $soma[2] * 3;
+        
+        $digitoVerificador = $primeiroDigito + $segundoDigito + $terceiroDigito;
+        
+        return  $digitoVerificador;
+      
     
-//     $contaCorrente = 235;
-//     
-//     $digitoVerificador = verificarDigitoVerificador(contaCorrente);
-//     
-//     
-//     function verificarDigitoVerificador(contaCorrente){
-//         
-//     
-//     }
+    }
     
     
 ?> 
