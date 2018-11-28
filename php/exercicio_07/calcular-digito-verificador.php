@@ -10,29 +10,30 @@
     //RECEBER OS DADOS DO USUÁRIO
     //__________________________________________
     
-    // variável com os números
+    // recebe os dados do usuário
     $contaCorrente = "235";
     
+    //chama a funcao que efua o calculo do digito verificador, passando o numero da conta corrente
     $digitoVerificador = verificarDigitoVerificador($contaCorrente);
     
+    //imprime na tela
     echo($digitoVerificador);
     
+    //funcao
     function verificarDigitoVerificador($contaCorrente){
-        
+        //pega o numero invertido
         $valorInvertido = $contaCorrente[2].$contaCorrente[1].$contaCorrente[0];
+        //efetua a soma dos valores
         $soma =  $valorInvertido + $contaCorrente;
+        //faz o parse de inteiro para string
         $soma = "$soma";
-
+        //faz o calculo de cada valor
         $primeiroDigito = $soma[0] * 1;
         $segundoDigito = $soma[1] * 2;
         $terceiroDigito = $soma[2] * 3;
-        
+        //faz a soma final
         $digitoVerificador = $primeiroDigito + $segundoDigito + $terceiroDigito;
-        
+        //retorna o digito verificador
         return  $digitoVerificador;
-      
-    
     }
-    
-    
 ?> 
