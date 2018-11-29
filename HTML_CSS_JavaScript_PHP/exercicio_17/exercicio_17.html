@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+
+17. HTML/CSS/JavaScript/PHP
+Usando os recursos disponíveis para HTML5 e CSS, desenvolva um formulário com as devidas formatações
+que receba as seguintes informações do usuário:
+• Nome – apenas texto.
+• Idade – apenas número e no máximo 3 dígitos.
+• Estado civil – Solteiro, Casado, Separado, Amasiado e Outros.
+• Grau de escolaridade – Dropbox contendo: fundamental, médio, superior, especialização, mestrado
+e doutorado.
+• Hobbies – Pescar, passear, nadar, correr andar de bicicleta, assistir TV, ouvir música, colecionar
+coisas. Pode ter múltiplas escolhas.
+• Sexo – M ou F não podendo escolher as duas opções.
+• Telefone, rua, número da residência.
+• CEP – apenas 8 dígitos.
+• Estado escolher de uma lista com as siglas da UF.
+• País.
+O usuário deverá ser informado por uma caixa de diálogo caso ele não tenha preenchido algum campo e o
+cursor deverá ser setado neste campo.
+Este formulário deverá ter dois botões funcionando devidamente, um para limpar os dados e outro para
+enviar os dados.
+Ao clicar em enviar deverá ser acionado um script PHP com as ações de envio desses dados para um banco
+de dados fictício.
+
+
+ -->
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Atividade 16</title>
+</head>
+<body>
+    <form action="exercicio_16.php">
+        <label>informe o seu estado civil</label><br>
+        <input type="text" name="codigoEstadoCivil" >
+        <br>
+        <input type="submit" value="Verificar">
+    </form>
+</body>
+</html>
