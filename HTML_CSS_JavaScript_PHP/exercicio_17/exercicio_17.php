@@ -22,29 +22,27 @@
 // Ao clicar em enviar deverá ser acionado um script PHP com as ações de envio desses dados para um banco
 // de dados fictício.
 
-
-
-
-    $codigo = $_GET['codigoEstadoCivil'];
+    $nome = $_POST['nome'];
+    $idade = $_POST['idade'];
+    $estadoCivil = $_POST['estadoCivil'];
+    $grauEscolariedade = $_POST['grauEscolariedade'];
+    $sexo = $_POST['sexo'];
+    $telefone = $_POST['telefone'];
+    $cep = $_POST['cep'];
+    $estado = $_POST['estado'];
+    $pais = $_POST['pais'];
     
-    switch($codigo){
-        case 'S':
-            echo "Solteiro";
-            break;
+    salvarDadosNoBanco($nome,$idade,$estadoCivil,$grauEscolariedade,$sexo,$telefone,$cep,$estado,$pais);
+    
+    
+    
+    
+    function salvarDadosNoBanco($nome,$idade,$estadoCivil,$grauEscolariedade,$sexo,$telefone,$cep,$estado,$pais){
         
-        case 'C':
-            echo "Casado";
-            break;
-            
-        case 'P':
-            echo "Separado";
-            break;
-            
-        case 'A':
-            echo "Amasiado";
-            break;
-        
-        default:
-            echo "Código do estado civil inválido";
+        echo"dados salvos com sucesso";
+    
     }
+    
+    
+
 ?>

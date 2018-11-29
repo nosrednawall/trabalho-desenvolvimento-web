@@ -4,22 +4,22 @@
 17. HTML/CSS/JavaScript/PHP
 Usando os recursos disponíveis para HTML5 e CSS, desenvolva um formulário com as devidas formatações
 que receba as seguintes informações do usuário:
-• Nome – apenas texto.
-• Idade – apenas número e no máximo 3 dígitos.
-• Estado civil – Solteiro, Casado, Separado, Amasiado e Outros.
+• Nome – apenas texto. ok
+• Idade – apenas número e no máximo 3 dígitos. ok
+• Estado civil – Solteiro, Casado, Separado, Amasiado e Outros. ok
 • Grau de escolaridade – Dropbox contendo: fundamental, médio, superior, especialização, mestrado
-e doutorado.
+e doutorado.ok
 • Hobbies – Pescar, passear, nadar, correr andar de bicicleta, assistir TV, ouvir música, colecionar
 coisas. Pode ter múltiplas escolhas.
-• Sexo – M ou F não podendo escolher as duas opções.
-• Telefone, rua, número da residência.
-• CEP – apenas 8 dígitos.
-• Estado escolher de uma lista com as siglas da UF.
-• País.
+• Sexo – M ou F não podendo escolher as duas opções. ok
+• Telefone, rua, número da residência. nok
+• CEP – apenas 8 dígitos. ok
+• Estado escolher de uma lista com as siglas da UF.ok
+• País.ok
 O usuário deverá ser informado por uma caixa de diálogo caso ele não tenha preenchido algum campo e o
-cursor deverá ser setado neste campo.
+cursor deverá ser setado neste campo. ok
 Este formulário deverá ter dois botões funcionando devidamente, um para limpar os dados e outro para
-enviar os dados.
+enviar os dados.ok
 Ao clicar em enviar deverá ser acionado um script PHP com as ações de envio desses dados para um banco
 de dados fictício.
 
@@ -30,14 +30,119 @@ de dados fictício.
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Atividade 16</title>
+    <link rel="stylesheet" href="css/bootstrap.css"></link>
+    <script href="js/bootstrap.js"></script>
+    <title>Atividade 17</title>
 </head>
 <body>
-    <form action="exercicio_16.php">
-        <label>informe o seu estado civil</label><br>
-        <input type="text" name="codigoEstadoCivil" >
-        <br>
-        <input type="submit" value="Verificar">
+    <form action="exercicio_17.php" method = "POST">
+        <fieldset class="container">
+            <legend>Dados Pessoais</legend>
+            
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input class="form-control" name="nome" id="nome" type="text" required>
+            </div>
+
+            <div class="form-group">
+                <label for="idade">Idade:</label>
+                <input class="form-control" name="idade" id="idade" type="text" pattern="[0-9]+" maxlength="3" required>
+            </div>
+
+            <div class="form-group">
+                <label for="estadoCivil">Estado civil</label>
+                <select class="form-control" name="estadoCivil" id="estadoCivil" required>
+                    <option value="Solteiro">Solteiro</option>
+                    <option value="Casado">Casado</option>
+                    <option value="Separado">Separado</option>
+                    <option value="Amasiado">Amasiado</option>
+                    <option value="Outros">Outros</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="grauEscolariedade">Grau escolariedade</label>
+                <select class="form-control" name="grauEscolariedade" id="grauEscolariedade" required>
+                    <option value="fundamental">Fundamental</option>
+                    <option value="medio">Médio</option>
+                    <option value="Superior">Superior</option>
+                    <option value="especializacao">Especialização</option>
+                    <option value="mestrado">Mestrado</option>
+                    <option value="Doutorado">Doutorado</option>
+                </select>
+            </div>
+            
+            
+            <div class="form-group">
+                <label for="hobbies">Hobbies:</label><br>
+                <label for="pescar">pescar</label>
+                <input class="form-control" name="pescar" id="pescar" type="checkbox" value="pescar">
+                <br>
+                <label for="passear">passear</label>
+                <input class="form-control" name="passear" id="passear" type="checkbox" value="passear">
+                <br>
+            </div>
+            
+            <div class="form-group">
+                <label for="sexo">Sexo</label>
+                <select class="form-control" name="sexo" id="sexo" required>
+                    <option value="feminino">Feminino</option>
+                    <option value="masculino">Masculino</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="telefone">Telefone:</label>
+                <input class="form-control" name="telefone" id="telefone" type="text" pattern="[0-9]+" maxlength="11" required>
+            </div>
+
+            <div class="form-group">
+                <label for="cep">CEP:</label>
+                <input class="form-control" name="cep" id="cep" type="text" pattern="[0-9]+" maxlength="8" required>
+            </div>
+            
+
+            <div class="form-group">
+                <label for="estado">Estado</label>
+                <select class="form-control" name="estado" id="estado" required>
+<!--                 AC,AL,AP,AM,BA,CE,DF,ES,GO,MA,MT,MS,MG,PA,PB,PR,PE,PI,RJ,RN,RS,RO,RR,SC,SP,SE,TO; -->
+                    <option value="ac">AC</option>
+                    <option value="al">AL</option>
+                    <option value="ap">AP</option>
+                    <option value="am">AM</option>
+                    <option value="ba">BA</option>
+                    <option value="ce">CE</option>
+                    <option value="df">DF</option>
+                    <option value="es">ES</option>
+                    <option value="go">GO</option>
+                    <option value="ma">MA</option>
+                    <option value="mt">MT</option>
+                    <option value="ms">MS</option>
+                    <option value="mg">MG</option>
+                    <option value="pa">PA</option>
+                    <option value="pb">PB</option>
+                    <option value="pr">PR</option>
+                    <option value="pe">PE</option>
+                    <option value="pi">PI</option>
+                    <option value="rj">RJ</option>
+                    <option value="rn">RN</option>
+                    <option value="rs">RS</option>
+                    <option value="ro">RO</option>
+                    <option value="rr">RR</option>
+                    <option value="sc">SC</option>
+                    <option value="sp">SP</option>
+                    <option value="se">SE</option>
+                    <option value="to">TO</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="pais">Pais:</label>
+                <input class="form-control" name="pais" id="pais" type="text" required>
+            </div>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+        </fieldset>
     </form>
 </body>
 </html>
