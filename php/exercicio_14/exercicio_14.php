@@ -14,6 +14,14 @@
 <body>
     <form>
         <label>informe o nome do vídeo que deseja assistir</label>
+        <br>
+        <label>Nomes disponíveis</label>
+        <ul>
+            <li>banana</li>
+            <li>gato</li>
+            <li>take on me</li>
+            <li>he-man</li>
+        </ul>
         <input type="text" name="nome" >
         <br>
         <input type="submit" value="Buscar">
@@ -25,7 +33,9 @@
             $restante = "frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>";
             
             $linkBanana = "https://www.youtube.com/embed/sFukyIIM1XI\"";
-//             $linkGatos = "";
+            $linkGatos = "https://www.youtube.com/embed/671Xw0SB9aM\"";
+            $linkMemme = "https://www.youtube.com/embed/tvVoY-PTf6s\"";
+            $linkHeman = "https://www.youtube.com/embed/ZZ5LpwO-An4\"";
             
             
             
@@ -39,23 +49,26 @@
                         echo "</strong>";
                         break;
                         
-                    case '':
-                        $resultado = $primeiro - $segundo;
-                        echo "o resultado foi :".$resultado;
+                    case 'gato':
+                        echo "<strong>";
+                        echo $player.$linkGatos.$restante;
+                        echo "</strong>";
                         break;
                         
-                    case '*':
-                        $resultado = $primeiro * $segundo;
-                        echo "o resultado foi :".$resultado;
+                    case 'take on me':
+                        echo "<strong>";
+                        echo $player.$linkMemme.$restante;
+                        echo "</strong>";
                         break;
                         
-                    case '/':
-                        $resultado = $primeiro / $segundo;
-                        echo "o resultado foi :".$resultado;
+                    case 'he-man':
+                        echo "<strong>";
+                        echo $player.$linkHeman.$restante;
+                        echo "</strong>";
                         break;
                         
                     default:
-                        echo "<h1>A operação informada não é reconhecida</h1>";
+                        echo "<h1>Nenhum vídeo encontrado</h1>";
                 }
             }
  
